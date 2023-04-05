@@ -1,4 +1,4 @@
-export function Footer() {
+export default function Footer() {
   return (
     <div class=" p-6 text-center">
       <span>© 2023 Copyright: </span>
