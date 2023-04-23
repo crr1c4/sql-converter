@@ -33,12 +33,16 @@ export const handler: Handlers<Results> = {
     dataTypesNumberList.forEach((element, index) => {
       if (isNaN(element))
         throw new Error(
-          `Invalid value passed to datatypes field at index ${index}: ${element}.`
+          `Invalid value passed to datatypes field at index ${
+            index + 1
+          }: ${element}.`
         )
 
       if (element < 0 || element >= DATATYPES_LENGTH)
         throw new Error(
-          `Invalid value passed to datatypes field at index ${index}: ${element}, it must be a value between [0, ${
+          `Invalid value passed to datatypes field at index ${
+            index + 1
+          }: ${element}, it must be a value between [0, ${
             DATATYPES_LENGTH - 1
           }].`
         )
@@ -62,7 +66,9 @@ export const handler: Handlers<Results> = {
     data.forEach((line, index) => {
       if (line.length !== dataTypesList.length)
         throw new Error(
-          `Invalid data in excel field, check data in line ${index} on excel field.`
+          `Invalid data in excel field, check data in line ${
+            index + 1
+          } on excel field.`
         )
     })
 

@@ -54,7 +54,6 @@ export default function Index({ data }: PageProps<FormProps>) {
         >
           <h1 class="font-bold text-2xl text-center">
             Convert Excel tables to SQL INSERT INTO records{" "}
-            <Icon code="database" />
           </h1>
           <input
             type="text"
@@ -79,24 +78,13 @@ export default function Index({ data }: PageProps<FormProps>) {
               required
               value={datatypes}
               placeholder="Data types"
-              className=" shadow appearance-none border rounded col-span-6 sm:col-span-7 py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+              className=" shadow appearance-none border rounded col-span-6 sm:col-span-7 py-2 px-3 text-gray-700 leading-tight focus:outline-none "
             />
 
             <div className="col-span-2 sm:col-span-1">
               <Button message={help} value="?"></Button>
             </div>
           </div>
-
-          <label className="">
-            <input
-              id="uppercaseCheckbox"
-              type="checkbox"
-              name="uppercase"
-              className="bg-green-500"
-              checked
-            />{" "}
-            Use uppercase characters{" "}
-          </label>
 
           <div className="flex gap-4">
             {/* <input
@@ -111,7 +99,7 @@ export default function Index({ data }: PageProps<FormProps>) {
 
             <a
               href="/"
-              className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700 align-middle flex- gap-1"
+              className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700 align-middle flex gap-1"
             >
               <Icon code="delete" />
               DELETE
