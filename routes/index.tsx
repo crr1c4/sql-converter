@@ -2,6 +2,7 @@ import { Head } from "$fresh/runtime.ts"
 import { Handlers, PageProps } from "$fresh/server.ts"
 import Footer from "../components/Footer.tsx"
 import Button from "../islands/Button.tsx"
+import Icon from "../components/Icon.tsx"
 
 // TODO: ADD TESTS!!!
 
@@ -52,7 +53,8 @@ export default function Index({ data }: PageProps<FormProps>) {
           className=" sm:w-3/4 md:w-1/2 w-full flex flex-col gap-4 p-4 justify-center items-center rounded overflow-hidden shadow-lg bg-green-50"
         >
           <h1 class="font-bold text-2xl text-center">
-            Convert Excel tables to SQL INSERT INTO records
+            Convert Excel tables to SQL INSERT INTO records{" "}
+            <Icon code="database" />
           </h1>
           <input
             type="text"
@@ -84,16 +86,36 @@ export default function Index({ data }: PageProps<FormProps>) {
               <Button message={help} value="?"></Button>
             </div>
           </div>
-          <div className="flex gap-4">
-            <input
-              type="submit"
-              value="Transform"
-              className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700"
-            />
 
-            <button className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700">
-              <a href="/">Delete</a>
+          <label className="">
+            <input
+              id="uppercaseCheckbox"
+              type="checkbox"
+              name="uppercase"
+              className="bg-green-500"
+              checked
+            />{" "}
+            Use uppercase characters{" "}
+          </label>
+
+          <div className="flex gap-4">
+            {/* <input
+              type="submit"
+              value="TRANSFORM"
+              className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700"
+            /> */}
+            <button className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700 flex gap-1">
+              <Icon code="robot" />
+              TRANSORM
             </button>
+
+            <a
+              href="/"
+              className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700 align-middle flex- gap-1"
+            >
+              <Icon code="delete" />
+              DELETE
+            </a>
           </div>
         </form>
         <Footer />
