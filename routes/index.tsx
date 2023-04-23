@@ -3,6 +3,8 @@ import { Handlers, PageProps } from "$fresh/server.ts"
 import Footer from "../components/Footer.tsx"
 import Button from "../islands/Button.tsx"
 
+// TODO: ADD TESTS!!!
+
 interface FormProps {
   title: string
   datatypes: string
@@ -75,16 +77,24 @@ export default function Index({ data }: PageProps<FormProps>) {
               required
               value={datatypes}
               placeholder="Data types"
-              className=" shadow appearance-none border rounded col-span-7 py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+              className=" shadow appearance-none border rounded col-span-6 sm:col-span-7 py-2 px-3 text-gray-700 leading-tight focus:outline-none"
             />
 
-            <Button message={help} value="?"></Button>
+            <div className="col-span-2 sm:col-span-1">
+              <Button message={help} value="?"></Button>
+            </div>
           </div>
-          <input
-            type="submit"
-            value="Transform"
-            className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700"
-          />
+          <div className="flex gap-4">
+            <input
+              type="submit"
+              value="Transform"
+              className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700"
+            />
+
+            <button className="bg-green-500 transition-colors duration-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer disabled:bg-green-700">
+              <a href="/">Delete</a>
+            </button>
+          </div>
         </form>
         <Footer />
       </div>
